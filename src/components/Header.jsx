@@ -1,5 +1,6 @@
 import React from "react";
 import developer from "../assets/developer.svg";
+import cv from "../assets/CV_jetaype.pdf";
 
 const Header = () => {
   return (
@@ -21,7 +22,7 @@ const Header = () => {
           </p>
           <a
             download
-            href="https://www.canva.com/design/DAFXSsR8hpc/bJdEvjsvtpUuE6PPLr8ARw/edit?utm_content=DAFXSsR8hpc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+            href={cv}
             className="p-2 mt-2 bg-[#00111C] block max-w-max text-slate-300 rounded-lg"
           >
             Descargar CV
