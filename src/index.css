@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,400;0,700;1,400;1,500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html{
+  background-color: #00253E;
+  scroll-behavior: smooth;
+}
+
+* {
+  scroll-margin: 56px;
+}
+
+body{
+  background-color: #00253E;
+  font-family: 'Kanit', sans-serif;
+}
