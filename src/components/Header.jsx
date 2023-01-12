@@ -25,7 +25,7 @@ const Header = () => {
             href={cv}
             className="p-2 mt-2 bg-[#00111C] block max-w-max text-slate-300 rounded-lg"
           >
-            Descargar CV
+            Descargar CV.
           </a>
         </section>
       </section>
