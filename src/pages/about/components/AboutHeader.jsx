@@ -67,7 +67,7 @@ const AboutHeader = () => {
     <article className="flex flex-col md:flex-row">
       {/* section left */}
       <section className="min-h-screen flex w-full relative w-full md:flex-1">
-        <h2 className="absolute top-0 text-white text-center text-4xl font-bold w-full py-3 md:w-9/12 md:top-4 md:-translate-x-1/2 md:left-1/2">
+        <h2 className="absolute top-0 text-white text-center text-4xl font-bold w-full py-3 md:w-9/12 bg-black md:top-4 md:-translate-x-1/2 md:left-1/2">
           Juan Taype
         </h2>
         <img
