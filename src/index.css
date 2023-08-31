@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-color: #1b191c;
+  --primary-color: #c6c6c9;
+  --secondary-color: #3b82f6;
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Roboto", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-primary);
+}
+
+.subtitle {
+  background: #f58a1d;
+  background: linear-gradient(to bottom, #f58a1d 48%, #cf1512 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.line {
+  background: rgb(2, 0, 36);
+  height: 1px;
+  border: none;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(187, 56, 22, 1) 35%,
+    rgba(101, 7, 110, 1) 55%,
+    rgba(255, 193, 0, 1) 100%
+  );
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.button {
+  outline: none;
+  position: relative;
+  width: 200px;
+  height: 30px;
+  background-color: white;
+  color: var(--background-color);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.8rem auto;
+  z-index: 1;
+  padding: 2em 1rem;
+}
+
+.button:before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to top left, #f89b29 -4%, #ff0f7b 77%);
+  transform: translate3d(10px, 10px, 0) scale(0.97);
+  filter: blur(0px);
+  opacity: var(1);
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+
+/* hbartolo.efact@gmail.com */
+
+/* 
+* Prevents issues when the parent creates a 
+* stacking context. (For example, using the transform
+* property )
+*/
+.button::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  border-radius: inherit;
+}
+
+.button:hover::after,
+.button:hover::before {
+  transform: translate3d(0, 0, 0) scale(1);
+  transition: transform 200ms ease-in-out;
+}
