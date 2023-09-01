@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import { AiOutlineStar } from "react-icons/ai";
 import { GoRepoForked } from "react-icons/go";
 import SpanComponent from "./components/SpanComponent/SpanComponent";
+import devmapImage from "../../assets/devmap.png";
+import qrImage from "../../assets/qrRestaurant.png";
+import docImage from "../../assets/doc.png";
 
 const Projects = () => {
   const token = import.meta.env.VITE_SECRET_GITHUB;
@@ -42,7 +45,8 @@ const Projects = () => {
       rol: "Full stack",
       description:
         "[QR restaurant]! 💡💻 una plataforma digital única que conecta a restaurantes con sus clientes de una manera moderna y eficiente.",
-      image: "",
+      image: qrImage,
+      url: "https://restaurantqr.netlify.app/",
     },
     {
       name: "DevEd Roadmap",
@@ -51,7 +55,8 @@ const Projects = () => {
       rol: "Full Stack",
       description:
         "DevEd Roadmap, sitio webe diseñada para acompañar y guiar a los nuevos desarrolladores en su emocionante viaje hacia la maestría en la programación.",
-      image: "",
+      image: devmapImage,
+      url: "https://rutadev.netlify.app/",
     },
     {
       name: "DocConnect",
@@ -60,7 +65,8 @@ const Projects = () => {
       rol: "Modelador de base de datos",
       description:
         "modelamiento de una base de datos de una clínica DocConnect, realizando una buena normalización de tablas para evitar la duplicidad de información",
-      image: "",
+      image: docImage,
+      url: "https://github.com/jetaype21/bd-query",
     },
   ];
 
@@ -73,7 +79,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <section className="bg-background min-h-screen pb-16">
+    <section className="bg-background min-h-screen pb-16 md:pb-4">
       {/* repositorios */}
       <section className="px-4 py-4 md:px-8">
         <h2 className={`${classTitle}`}>Mis proyectos</h2>
@@ -140,9 +146,69 @@ const Projects = () => {
       {/* projects */}
       <section className="px-4 py-4 md:px-8">
         <h2 className={`${classTitle}`}>Últimos proyectos</h2>
+        <hr className="line" />
         <p className={`${classSubtitle}`}>
           Tranformando ideas a la realidad digital.
         </p>
+
+        <section className="">
+          {projects &&
+            projects.map((project, index) => (
+              <section className="md:w-11/12 py-2 px-4 flex flex-col gap-6 md:gap-11 md:flex-row bg-slate-900 mb-4">
+                <article className="flex-1" key={index}>
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    className="w-full h-full object-cover rounded-md"
+                  />
+                </article>
+                <article className="flex-1">
+                  <Link
+                    to={project.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-2xl text-white font-bold hover:text-secondary"
+                  >
+                    {project.name}
+                  </Link>
+                  <p className="text-primary text-sm md:text-md py-2">
+                    {project.description}
+                  </p>
+                  <section>
+                    <h4 className="text-secondary">Tecnologias</h4>
+                    <article className="flex flex-wrap gap-2 p-2">
+                      {project?.techs.map((tech, index) => (
+                        <span
+                          key={index}
+                          className="bg-orange-200/50 p-2 rounded"
+                          style={{
+                            color: "#f89b29",
+                          }}
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </article>
+                    <article className="flex flex-wrap gap-2 p-2 justify-between">
+                      {" "}
+                      <p className="text-secondary">
+                        Duración <br />
+                        <span className="text-white">
+                          {project.duration}
+                        </span>{" "}
+                      </p>{" "}
+                      <p className="text-secondary">
+                        {" "}
+                        Rol
+                        <br />
+                        <span className="text-white">{project.rol}</span>{" "}
+                      </p>
+                    </article>
+                  </section>
+                </article>
+              </section>
+            ))}
+        </section>
       </section>
     </section>
   );
