@@ -6,7 +6,7 @@ const Experiencie = () => {
 
   const educations = [
     {
-      name: "Intituto Certus",
+      name: "Instituto Certus",
       degree: "Diseño Y desarrollo de software",
       date: "2021 - 2024",
       city: "Lima, Perú",
