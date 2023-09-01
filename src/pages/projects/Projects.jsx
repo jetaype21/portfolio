@@ -6,8 +6,8 @@ import { GoRepoForked } from "react-icons/go";
 import SpanComponent from "./components/SpanComponent/SpanComponent";
 
 const Projects = () => {
+  const token = import.meta.env.VITE_SECRET_GITHUB;
   const username = "jetaype21";
-  const token = "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";
   const url = `https://api.github.com/users/${username}/repos`;
   const headers = {
     Authorization: `token ${token}`,
@@ -25,6 +25,7 @@ const Projects = () => {
     try {
       setLoading(true);
       const { data } = await axios.get(url, { headers });
+      console.log(token);
       setRepositories(data.reverse());
     } catch (error) {
       setError(true);
