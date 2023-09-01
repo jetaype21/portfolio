@@ -4,6 +4,7 @@ import { Home } from "./pages/home";
 import Nabvar from "./components/navbar/Nabvar";
 import { About } from "./pages/about";
 import NotFound from "./pages/notFound/NotFound";
+import Projects from "./pages/projects/Projects";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sobre-mi" element={<About />} />
-          <Route path="/proyectos" element={<NotFound />} />
+          <Route path="/proyectos" element={<Projects />} />
           <Route path="/contacto" element={<NotFound />} />
           {/* ROUTE NOT FOUND */}
           <Route path="*" element={<NotFound />} />

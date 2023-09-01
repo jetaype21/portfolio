@@ -72,7 +72,6 @@ const AboutHeader = () => {
         </h2>
         <img
           src={developer}
-          loading="lazy"
           alt="img developer - juantaype"
           className="min-h-full w-full object-cover object-center "
         />
