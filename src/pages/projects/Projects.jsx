@@ -28,7 +28,7 @@ const Projects = () => {
     try {
       setLoading(true);
       const { data } = await axios.get(url, { headers });
-      console.log(token);
+      console.log("here here 👀❌");
       setRepositories(data.reverse());
     } catch (error) {
       setError(true);
